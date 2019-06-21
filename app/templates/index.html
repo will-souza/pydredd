@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Bem vindo ao PyDredd</h1>
+<hr>
+<form action="validacao" method="POST">
+	<div class="row">
+		<div class="col-sm-12 col-lg-6">
+			<h3>Informação sobre o site</h3>
+			<div class="form-group">
+				<label for="site_validar">Informe o site a ser validado</label>
+				<input type="text" class="form-control" id="site_validar" placeholder="Url do site" name="url">
+				<small id="info" class="form-text text-muted">Informe a url completa, incluindo http:// ou https://.</small>
+			</div>
+		</div>
+		<div class="col-sm-12 col-lg-6">
+			<h3>Pontos a serem validados</h3>
+			<div class="form-group">
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="w3c" value="w3c" name="w3c">
+					<label class="custom-control-label" for="w3c">Estutrura W3C</label>
+				</div>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="alt-title-img" value="alt-title-img" name="alt-title-img">
+					<label class="custom-control-label" for="alt-title-img">Alt e Title nas imagens</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary" name="validar">Validar</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+{% endblock %}

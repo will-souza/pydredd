@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Resultados da validação</h1>
+<hr>
+
+
+{% for erro in erros %}
+	<p class="mb-0">{{erro}}</p>
+	{% for tipo_erro in erros[erro] %}
+		{{tipo_erro}}
+	{% endfor %}
+	<br>
+	<br>
+{% endfor %}
+
+
+
+
+<hr>
+
+<h3>Todas as páginas do site</h3>
+{% for pagina in todas_paginas %}
+	<p>{{pagina}}</p>
+{% endfor %}
+<hr>
+{% if alt_title_results['sem_alt'] %}
+	<h3>Imagens sem alt</h3>
+	{% for sem_alt in alt_title_results['sem_alt'] %}
+		<p>{{sem_alt}}</p>
+	{% endfor %}
+{% endif %}
+<hr>
+{% if alt_title_results['sem_title'] %}
+	<h3>Imagens sem title</h3>
+	{% for sem_title in alt_title_results['sem_title'] %}
+		<p>{{sem_title}}</p>
+	{% endfor %}
+{% endif %}
+<hr>
+{% if alt_title_results['sem_alt_title'] %}
+	<h3>Imagens sem alt e title</h3>
+	{% for sem_alt_title in alt_title_results['sem_alt_title'] %}
+		<p>{{sem_alt_title}}</p>
+	{% endfor %}
+{% endif %}
+
+
+
+{% endblock %}

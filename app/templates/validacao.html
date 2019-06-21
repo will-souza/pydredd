@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Resultados da validação</h1>
+<hr>
+
+
+{% for erro in erros %}
+	<p class="mb-0">{{erro}}</p>
+	{% for tipo_erro in erros[erro] %}
+		{{tipo_erro}}
+	{% endfor %}
+	<br>
+	<br>
+{% endfor %}
+
+{% endblock %}

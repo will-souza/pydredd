@@ -13,8 +13,16 @@ def index():
 @app.route('/validacao', methods=["POST"])
 def validacao():
 	if request.method == 'POST':				
-		# alt_title_results = alt_title(request.form['url'])
 		todas_paginas = all_pages(request.form['url'])
-		erros = w3c(todas_paginas)
+		alt_title_results = alt_title(todas_paginas)
+		if 'w3c' in request.form:
+			erros = w3c(todas_paginas)
+		else:
+			erros = 'pokemon'
+		if 'alt-title-img' in request.form:
+			alt_title_img = request.form['alt-title-img']
+		else:
+			alt_title_img = 'naruto'
 
-	return render_template('validacao.html', erros=erros)
+
+	return render_template('validacao.html', erros=erros, alt_title_img=alt_title_img, alt_title_results=alt_title_results)

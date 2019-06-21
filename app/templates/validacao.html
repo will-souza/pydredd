@@ -5,7 +5,7 @@
 
 {% if erros != 'pokemon' %}
 	{% for erro in erros %}
-		<p class="mb-0">{{erro}}</p>
+		<a href="https://validator.w3.org/nu/?doc={{erro}}" target="blank" class="d-block mb-0" alt="{{erro}}">{{erro}}</a>
 		{% for tipo_erro in erros[erro] %}
 			{{tipo_erro}}
 		{% endfor %}

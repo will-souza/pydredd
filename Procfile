@@ -1,2 +1,2 @@
 web: gunicorn run:app
-timeout 0
+config:set DISABLE_COLLECTSTATIC=1
